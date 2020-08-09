@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vue3soko</title>
+  <link rel="stylesheet" href="./assets/styles.css">
+  <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+  <div id="app">
+    <div class="nav-bar"></div>
+
+    <div class="cart">Cart({{ cart.length }})</div>
+
+    <product-display
+      :premium="premium"
+      @add-to-cart="updateCart"
+      @remove-from-cart="removeById"
+    >
+    </product-display>
+
+  </div>
+
+  <!-- import the vue app instance -->
+  <script src="./main.js"></script>
+
+  <!-- import vue components -->
+  <script src="./components/ProductDisplay.js"></script>
+  <script src="./components/ProductDetails.js"></script>
+  <script src="./components/ReviewList.js"></script>
+  <script src="./components/ReviewForm.js"></script>
+
+  <!-- mount the vue app -->
+  <script>
+    const mountedApp = app.mount('#app');
+  </script>
+</body>
+</html>
